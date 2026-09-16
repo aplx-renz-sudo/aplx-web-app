@@ -160,6 +160,26 @@ export function InstallModal({ isOpen, onClose }: InstallModalProps) {
               </div>
               <ExternalLink size={16} style={{ color: '#c084fc', flexShrink: 0 }} />
             </a>
+
+            {/* 3. Install the Aplx WebApp */}
+            <a
+              href="https://github.com/aplx-renz-sudo/aplx-web-app"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="install-aplx-webapp-btn"
+              className="playful-pop install-webapp-link"
+            >
+              <div className="install-webapp-link__content">
+                <div className="install-webapp-link__icon">
+                  <Globe size={19} />
+                </div>
+                <div>
+                  <div className="install-webapp-link__title">3. Install the WebApp <span>NEW!</span></div>
+                  <div className="install-webapp-link__url">github.com/aplx-renz-sudo/aplx-web-app</div>
+                </div>
+              </div>
+              <ExternalLink size={16} className="install-webapp-link__external" />
+            </a>
           </div>
         </div>
       </div>

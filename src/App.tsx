@@ -1552,10 +1552,32 @@ function Landing({
           </button>
         </div>
       </nav>
+      {/* Updates sit at the top of the lobby, like a game's welcome screen. */}
+      <div className="announce-board" role="status" aria-label="V2 announcements">
+        <div className="announce-board-header">
+          <Megaphone size={14} />
+          <span>What's new in Aplx</span>
+          <span className="announce-board-dots">•••</span>
+        </div>
+        <ul className="announce-board-list">
+          <li className="announce-board-item">
+            <CheckCircle2 size={14} className="announce-board-check" />
+            <span className="announce-board-text"><span className="announce-board-tag">NEW</span>Brand new <b>V2</b>, PC exclusive, works on every OS!</span>
+          </li>
+          <li className="announce-board-item">
+            <CheckCircle2 size={14} className="announce-board-check" />
+            <span className="announce-board-text"><span className="announce-board-tag">NEW</span>Features added that were previously limited!</span>
+          </li>
+          <li className="announce-board-item">
+            <CheckCircle2 size={14} className="announce-board-check" />
+            <span className="announce-board-text"><span className="announce-board-tag">NEW</span>Run locally using .bat, .sh, or .command for your OS.</span>
+          </li>
+        </ul>
+      </div>
       <div className="hero animate-float-hero">
         {/* Interactive Galaxy Logo — dotted "A" core with two orbiting dots */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '28px' }}>
-          <GalaxyLogo size={300} />
+          <GalaxyLogo size={225} />
         </div>
         <div className="eyebrow flex items-center justify-center gap-2">
           <Sparkles size={14} className="text-[#8ea8ff] animate-twinkle" />
@@ -1584,38 +1606,6 @@ function Landing({
         <p>
           Aplx is a universal AI dock and intuitive guide for anyone who wants to run their own API keys easily. No middleman servers — your credentials stay 100% safe in your browser.
         </p>
-
-        {/* V2 Announcement Board */}
-        <div className="announce-board" role="status" aria-label="V2 announcements">
-          <div className="announce-board-header">
-            <Megaphone size={14} />
-            <span>Announcement Board</span>
-            <span className="announce-board-dots">•••</span>
-          </div>
-          <ul className="announce-board-list">
-            <li className="announce-board-item">
-              <CheckCircle2 size={14} className="announce-board-check" />
-              <span className="announce-board-text">
-                <span className="announce-board-tag">NEW</span>
-                BRAND NEW <b>V2</b>, PC EXCLUSIVE, WORKS ON EVERY OS!
-              </span>
-            </li>
-            <li className="announce-board-item">
-              <CheckCircle2 size={14} className="announce-board-check" />
-              <span className="announce-board-text">
-                <span className="announce-board-tag">NEW</span>
-                FEATURES ADDED THAT WERE PREVIOUSLY LIMITED!
-              </span>
-            </li>
-            <li className="announce-board-item">
-              <CheckCircle2 size={14} className="announce-board-check" />
-              <span className="announce-board-text">
-                <span className="announce-board-tag">NEW</span>
-                RUN LOCALLY USING .bat OR .sh OR .command ACCORDING TO YOUR OS :D
-              </span>
-            </li>
-          </ul>
-        </div>
 
         <div className="hero-actions">
           <a
