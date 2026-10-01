@@ -881,19 +881,21 @@ export default function App() {
       />
 
       {view === 'landing' && (
-        <Landing
-          launch={handleLaunchApp}
-          settings={() => goSettings('provider')}
-          privacy={() => setView('privacy')}
-          about={() => setView('about')}
-          petId={preferences.petId}
-          soundEnabled={preferences.soundEffects}
-          onOpenGuide={() => setShowTour(true)}
-        />
+        <div key="view-landing" className="workspace-container animate-workspace-slide-in">
+          <Landing
+            launch={handleLaunchApp}
+            settings={() => goSettings('provider')}
+            privacy={() => setView('privacy')}
+            about={() => setView('about')}
+            petId={preferences.petId}
+            soundEnabled={preferences.soundEffects}
+            onOpenGuide={() => setShowTour(true)}
+          />
+        </div>
       )}
 
       {view === 'chat' && (
-        <>
+        <div key="view-chat" className="workspace-container animate-workspace-slide-in">
           <aside className={'sidebar ' + (sidebar ? 'open' : '')}>
             <div className="brand flex items-center justify-between">
               <button
@@ -1041,7 +1043,7 @@ export default function App() {
               {!showMoreSidebarOptions ? (
                 <button
                   type="button"
-                  className="playful-pop flex items-center justify-between w-full cursor-pointer"
+                  className="sidebar-options-toggle-btn flex items-center justify-between w-full cursor-pointer"
                   onClick={() => setShowMoreSidebarOptions(true)}
                   title="Open options (...)"
                 >
@@ -1056,7 +1058,7 @@ export default function App() {
                   {/* Downward button to hide these buttons again */}
                   <button
                     type="button"
-                    className="playful-pop flex items-center justify-between w-full cursor-pointer bg-white/[0.06] hover:bg-white/[0.1] text-[#a5b4fc] border border-white/[0.08]"
+                    className="sidebar-options-toggle-btn flex items-center justify-between w-full cursor-pointer bg-white/[0.06] hover:bg-white/[0.1] text-[#a5b4fc] border border-white/[0.08]"
                     onClick={() => setShowMoreSidebarOptions(false)}
                     title="Hide options"
                   >
@@ -1398,59 +1400,69 @@ export default function App() {
               </>
             )}
           </main>
-        </>
+        </div>
       )}
 
       {view === 'settings' && (
-        <FullSettingsModal
-          tab={settingsTab}
-          setTab={setSettingsTab}
-          providerConfig={providerConfig}
-          onProviderChange={persistProvider}
-          preferences={preferences}
-          setPreferences={updatePreferences}
-          tokenStats={tokenStats}
-          onResetTokenStats={() => setTokenStats(loadTokenStats())}
-          onExportChat={exportChat}
-          onImportChat={importChat}
-          onClearAllData={clearAllData}
-          back={() => setView('chat')}
-          onAbout={() => setView('about')}
-          onPrivacy={() => setView('privacy')}
-        />
+        <div key="view-settings" className="workspace-container animate-workspace-slide-in">
+          <FullSettingsModal
+            tab={settingsTab}
+            setTab={setSettingsTab}
+            providerConfig={providerConfig}
+            onProviderChange={persistProvider}
+            preferences={preferences}
+            setPreferences={updatePreferences}
+            tokenStats={tokenStats}
+            onResetTokenStats={() => setTokenStats(loadTokenStats())}
+            onExportChat={exportChat}
+            onImportChat={importChat}
+            onClearAllData={clearAllData}
+            back={() => setView('chat')}
+            onAbout={() => setView('about')}
+            onPrivacy={() => setView('privacy')}
+          />
+        </div>
       )}
 
       {view === 'privacy' && (
-        <Privacy
-          back={() => setView('landing')}
-          settings={() => goSettings('provider')}
-          about={() => setView('about')}
-        />
+        <div key="view-privacy" className="workspace-container animate-workspace-slide-in">
+          <Privacy
+            back={() => setView('landing')}
+            settings={() => goSettings('provider')}
+            about={() => setView('about')}
+          />
+        </div>
       )}
 
       {view === 'about' && (
-        <AboutPage
-          launch={handleLaunchApp}
-          home={() => setView('landing')}
-          settings={() => goSettings('provider')}
-          motion={preferences.motion}
-        />
+        <div key="view-about" className="workspace-container animate-workspace-slide-in">
+          <AboutPage
+            launch={handleLaunchApp}
+            home={() => setView('landing')}
+            settings={() => goSettings('provider')}
+            motion={preferences.motion}
+          />
+        </div>
       )}
 
       {view === 'build' && (
-        <BuildModeView
-          providerConfig={providerConfig}
-          onLeave={() => setView('chat')}
-          onOpenSettings={() => goSettings('provider')}
-        />
+        <div key="view-build" className="workspace-container animate-workspace-slide-in">
+          <BuildModeView
+            providerConfig={providerConfig}
+            onLeave={() => setView('chat')}
+            onOpenSettings={() => goSettings('provider')}
+          />
+        </div>
       )}
 
       {view === 'media' && (
-        <MediaStudioView
-          providerConfig={providerConfig}
-          onLeave={() => setView('chat')}
-          onOpenSettings={() => goSettings('provider')}
-        />
+        <div key="view-media" className="workspace-container animate-workspace-slide-in">
+          <MediaStudioView
+            providerConfig={providerConfig}
+            onLeave={() => setView('chat')}
+            onOpenSettings={() => goSettings('provider')}
+          />
+        </div>
       )}
     </div>
   );

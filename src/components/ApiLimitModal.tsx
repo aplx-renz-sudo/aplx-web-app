@@ -87,7 +87,7 @@ export const ApiLimitModal: React.FC<ApiLimitModalProps> = ({
       }}
     >
       <div
-        className="relative w-full max-w-lg bg-[#0c1322] border border-emerald-500/30 rounded-3xl shadow-2xl shadow-emerald-950/60 overflow-hidden text-[#e2e8f0] animate-scale-up"
+        className="relative w-full max-w-lg bg-[#0c1322] border border-emerald-500/30 rounded-3xl shadow-2xl shadow-emerald-950/60 overflow-hidden text-[#e2e8f0] animate-modal-slide-in"
         onClick={e => e.stopPropagation()}
       >
         {/* Playful Decorative Top Banner */}

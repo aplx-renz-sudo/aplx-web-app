@@ -37,19 +37,23 @@
 }
 
 /* Tactile Micro-Interactions */
-.playful-btn, .primary, .secondary, .nav-launch {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.2s ease,
-              background 0.15s ease,
-              border-color 0.15s ease !important;
+.playful-btn, .primary, .secondary, .nav-launch, .landing-nav-btn {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              filter 0.18s ease,
+              color 0.15s ease !important;
 }
 
-.playful-btn:hover, .primary:hover, .secondary:hover, .nav-launch:hover {
-  transform: translateY(-1px) !important;
+.playful-btn:hover, .primary:hover, .secondary:hover, .nav-launch:hover, .landing-nav-btn:hover {
+  transform: translateY(-1.5px) !important;
 }
 
-.playful-btn:active, .primary:active, .secondary:active, .nav-launch:active {
-  transform: scale(0.98) !important;
+.playful-btn:active, .primary:active, .secondary:active, .nav-launch:active, .landing-nav-btn:active {
+  transform: scale(0.93) translateY(1px) !important;
+  filter: brightness(1.15) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.15) !important;
 }
 
 .icon:hover {

@@ -36,6 +36,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 /* Cosmic Space Canvas - Quiet Atmospheric Depth & Dynamic Custom Gradient */
@@ -105,7 +106,8 @@ button:disabled {
   box-shadow: none !important;
 }
 
-/* Subtle Apple-style tactile motion */
+/* Subtle Apple-style tactile motion for buttons */
+button,
 .playful-pop,
 .primary,
 .secondary,
@@ -116,27 +118,41 @@ button:disabled {
 .settings-tab-btn,
 .provider-pick,
 .about-card,
+.profile-avatar-btn,
+.landing-nav-btn,
 button.primary,
 button.secondary {
-  transition: transform 0.2s var(--ease-apple),
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
               background 0.2s ease,
               border-color 0.2s ease,
-              box-shadow 0.2s ease,
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.18s ease,
               color 0.15s ease;
 }
 
-.playful-pop:hover,
-.nav-launch:hover,
-.prompt-deck button:hover {
-  transform: translateY(-1px);
+button:hover:not(:disabled),
+.playful-pop:hover:not(:disabled),
+.nav-launch:hover:not(:disabled),
+.prompt-deck button:hover:not(:disabled),
+.landing-nav-btn:hover:not(:disabled) {
+  transform: translateY(-1.5px);
 }
 
-.playful-pop:active,
-.primary:active,
-.secondary:active,
-.new-chat:active,
-.send:active {
-  transform: scale(0.98);
+button:active:not(:disabled),
+.playful-pop:active:not(:disabled),
+.primary:active:not(:disabled),
+.secondary:active:not(:disabled),
+.new-chat:active:not(:disabled),
+.nav-launch:active:not(:disabled),
+.send:active:not(:disabled),
+.prompt-deck button:active:not(:disabled),
+.settings-tab-btn:active:not(:disabled),
+.provider-pick:active:not(:disabled),
+.profile-avatar-btn:active:not(:disabled),
+.landing-nav-btn:active:not(:disabled) {
+  transform: scale(0.93) translateY(1px) !important;
+  filter: brightness(1.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.15);
 }
 
 /* Top-tier Button Archetypes */
@@ -1267,7 +1283,8 @@ footer a:hover {
   }
 }
 
-.modal-dialog {
+.modal-dialog,
+.animate-modal-slide-in {
   position: relative;
   width: 100%;
   max-width: 520px;
@@ -1282,18 +1299,36 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   max-height: 90vh;
-  animation: modalScalePop 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  transform-origin: center center;
+  animation: modalSlideInBottomLeft 0.86s cubic-bezier(0.16, 1, 0.25, 1) both;
+  will-change: transform, opacity, filter;
+  transform-origin: bottom left;
+  backface-visibility: hidden;
 }
 
-@keyframes modalScalePop {
+@keyframes modalSlideInBottomLeft {
   0% {
     opacity: 0;
-    transform: scale(0.93) translateY(14px);
+    transform: translate3d(-35%, 45%, 0) scale(0.76);
+    transform-origin: bottom left;
+    filter: blur(12px) brightness(1.08);
+  }
+  25% {
+    opacity: 0.7;
+    filter: blur(7px) brightness(1.05);
+  }
+  50% {
+    opacity: 0.92;
+    filter: blur(3px) brightness(1.02);
+  }
+  75% {
+    opacity: 0.98;
+    filter: blur(1px);
   }
   100% {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: bottom left;
+    filter: blur(0px);
   }
 }
 
@@ -1323,6 +1358,9 @@ footer a:hover {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.18);
+}
+.modal-close-btn:active {
+  transform: scale(0.88) rotate(90deg) !important;
 }
 
 /* Landing Navigation & Spacing */
@@ -1561,6 +1599,75 @@ footer a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 .animate-fade-in-up { animation: fade-in-up 0.25s var(--ease-apple) forwards; }
+
+/* Workspace entrance: slides smoothly from bottom-left corner and fills the whole screen with deliberate cinematic pacing & light motion blur */
+@keyframes workspaceSlideInBottomLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-60%, 60%, 0) scale(0.68);
+    transform-origin: bottom left;
+    filter: blur(12px) brightness(1.08);
+  }
+  25% {
+    opacity: 0.7;
+    filter: blur(7px) brightness(1.05);
+  }
+  50% {
+    opacity: 0.92;
+    filter: blur(3px) brightness(1.02);
+  }
+  75% {
+    opacity: 0.98;
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: bottom left;
+    filter: blur(0px);
+  }
+}
+
+.workspace-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.animate-workspace-slide-in {
+  animation: workspaceSlideInBottomLeft 0.86s cubic-bezier(0.16, 1, 0.25, 1) both;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+/* Smooth Settings Hub entrance */
+@keyframes settingsPageOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.settings-page {
+  animation: settingsPageOpen 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Sidebar Options toggle button stays normal without animations */
+.sidebar-options-toggle-btn {
+  transform: none !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+  animation: none !important;
+}
+.sidebar-options-toggle-btn:hover,
+.sidebar-options-toggle-btn:active {
+  transform: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+}
 
 /* Responsive adjustments */
 @media (max-width: 760px) {
