@@ -1,4 +1,4 @@
-# Aplx Web App.
+# Ooga booga web app setup
 Official lmao
 
 see a lil up and compare the files to see and use for yo OS lmao
@@ -15,4 +15,4 @@ windows- use start.bat (big blue windows haha)
 
 linux- use start.sh (pengiun go brr)
 
-boom you have aplx
+boom you have docx
