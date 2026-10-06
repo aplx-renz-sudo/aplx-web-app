@@ -85,7 +85,7 @@ export function AboutPage({ launch, home, settings, motion }: AboutPageProps) {
           <article className="about-card glass" role="listitem">
             <ShieldCheck size={20} aria-hidden="true" />
             <h3>Privacy</h3>
-            <p>Your credentials belong to you. Aplx Web is designed so provider API requests can be made directly from the browser rather than routing your API key through an Aplx-owned backend.</p>
+            <p>Your credentials belong to you. docx-preview is designed so provider API requests can be made directly from the browser rather than routing your API key through an Aplx-owned backend.</p>
           </article>
           <article className="about-card glass" role="listitem">
             <Globe size={20} aria-hidden="true" />
@@ -107,7 +107,7 @@ export function AboutPage({ launch, home, settings, motion }: AboutPageProps) {
           <article className="about-split-panel glass">
             <div className="about-split-icon"><Cloud size={22} /></div>
             <h3>Online</h3>
-            <p>Aplx Web connects directly to your selected AI provider using your own API credentials.</p>
+            <p>docx-preview connects directly to your selected AI provider using your own API credentials.</p>
           </article>
           <div className="about-split-bridge" aria-hidden="true">
             <span className="about-split-line" />
@@ -173,7 +173,7 @@ export function AboutPage({ launch, home, settings, motion }: AboutPageProps) {
         <ol className="about-timeline">
           {[
             { label: 'Aplx AI', done: true },
-            { label: 'Aplx Web', done: true },
+            { label: 'docx-preview', done: true },
             { label: 'Online provider support', done: true },
             { label: 'Offline / local AI', done: true },
             { label: 'Continued model support', done: false },
@@ -203,9 +203,9 @@ export function AboutPage({ launch, home, settings, motion }: AboutPageProps) {
         <div className="about-cta-orbit" aria-hidden="true" />
         <div className="about-cta-inner glass">
           <h2 id="about-cta-heading">Ready to explore Aplx?</h2>
-          <p>Try Aplx Web, explore the project, or build your own setup.</p>
+          <p>Try docx-preview, explore the project, or build your own setup.</p>
           <div className="hero-actions">
-            <button className="primary" onClick={launch}>Launch Aplx Web <ArrowUp size={16} /></button>
+            <button className="primary" onClick={launch}>Launch docx-preview <ArrowUp size={16} /></button>
             <a className="secondary" href="https://github.com/R3nz/Aplx" target="_blank" rel="noreferrer">
               View on GitHub <ChevronRight size={16} />
             </a>

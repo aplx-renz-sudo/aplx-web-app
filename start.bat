@@ -1,12 +1,12 @@
 @echo off
 setlocal EnableDelayedExpansion
-title Aplx Web Launcher
+title docx-preview Launcher
 
 cd /d "%~dp0"
 
 echo.
 echo  ============================================
-echo    Aplx Web - starting up...
+echo    docx-preview - starting up...
 echo  ============================================
 echo.
 
@@ -83,7 +83,7 @@ start "" "http://localhost:3000"
 
 echo.
 echo  ============================================
-echo    Aplx Web is running.
+echo    docx-preview is running.
 echo    Keep this window open ^(or minimize it^).
 echo    Press any key to STOP the server.
 echo  ============================================

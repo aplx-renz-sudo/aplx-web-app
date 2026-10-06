@@ -69,7 +69,7 @@ export function createProvider(setup: ProviderSetup): AIProvider {
         baseUrl: baseUrl || 'https://openrouter.ai/api/v1',
         extraHeaders: {
           'HTTP-Referer': typeof window !== 'undefined' ? window.location.origin : 'https://aplx.web',
-          'X-Title': 'Aplx Web',
+          'X-Title': 'docx-preview',
         },
       });
     case 'ollama':

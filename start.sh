@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Aplx Web launcher — double-click (macOS/Linux) or run: ./start.sh
+# docx-preview launcher — double-click (macOS/Linux) or run: ./start.sh
 set -u
 
 cd "$(dirname "$0")"
 
 echo ""
 echo " ============================================"
-echo "   Aplx Web - starting up..."
+echo "   docx-preview - starting up..."
 echo " ============================================"
 echo ""
 
@@ -98,7 +98,7 @@ fi
 
 echo ""
 echo " ============================================"
-echo "   Aplx Web is running."
+echo "   docx-preview is running."
 echo "   Keep this window open."
 echo "   Press Ctrl+C to stop the server."
 echo " ============================================"

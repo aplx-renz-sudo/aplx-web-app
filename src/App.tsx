@@ -1131,7 +1131,7 @@ export default function App() {
               </button>
 
               <div className="web-status">
-                <span /> Aplx Web <small>{getProvider(providerConfig.provider).name}</small>
+                <span /> docx-preview <small>{getProvider(providerConfig.provider).name}</small>
               </div>
             </div>
           </aside>
@@ -2208,7 +2208,7 @@ function FullSettingsModal({
               <div className="space-y-8">
                 <div>
                   <div className="section-kicker">ABOUT</div>
-                  <h2 className="text-2xl font-bold text-white tracking-tight mt-1">Aplx Web</h2>
+                  <h2 className="text-2xl font-bold text-white tracking-tight mt-1">docx-preview</h2>
                   <p className="lead text-sm text-[#8da0c4] mt-1">The browser-based, private member of the Aplx ecosystem.</p>
                 </div>
                 <div className="about-grid">

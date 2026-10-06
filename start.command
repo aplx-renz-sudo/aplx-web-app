@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Aplx Web — macOS launcher
+# docx-preview — macOS launcher
 # Double-click this file in Finder to start Aplx in your default browser.
 # (If macOS blocks it: right-click -> Open, or run once with: bash start.command)
 # ==============================================================================
@@ -10,7 +10,7 @@ cd "$(dirname "$0")"
 
 echo ""
 echo " ============================================"
-echo "   Aplx Web - starting up..."
+echo "   docx-preview - starting up..."
 echo " ============================================"
 echo ""
 
@@ -88,7 +88,7 @@ open "http://localhost:3000"
 
 echo ""
 echo " ============================================"
-echo "   Aplx Web is running."
+echo "   docx-preview is running."
 echo "   Keep this window open."
 echo "   Press Ctrl+C to stop the server."
 echo " ============================================"
