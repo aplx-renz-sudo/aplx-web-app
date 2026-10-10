@@ -1,18 +1,2 @@
-# Ooga booga web app setup
-Official lmao
-
-see a lil up and compare the files to see and use for yo OS lmao
-
-then clone ts fr
-
-ez use
-
-see yo start. type of files down here lmao
-
-mac- use the start.command (apple thingy)
-
-windows- use start.bat (big blue windows haha)
-
-linux- use start.sh (pengiun go brr)
-
-boom you have docx
+retiring this repo, go to the website link, both start files and actual webapp is present 2 in 1 in that repo
+## Retiring ts (V2 graveyard)
